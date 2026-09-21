@@ -1,0 +1,523 @@
+/*
+ * This stylesheet contains the main definitions for the poster
+ * template. Feel free to add any additional styles you need or
+ * modify the existing.
+ *
+ * If you need many changes, I would recommended using a separate
+ * styles file "custom.css" that you include in the HTML right
+ * after "styles.css". You can then use it to redefine and add
+ * any styles that are only necessary for a sepecific poster.
+ * It will make it easier to reuse the base template in the future.
+ */
+
+
+/* ********************************************************* *
+ *                         VARIABLES
+/* ********************************************************* */
+
+* {
+    /* *** Page sizing ***
+     *
+     * Most conferences require posters printed in A0.
+     * You can use A4 to print a test page.
+     */
+
+    /* A0 size in pixels at 72 PPI */
+    --aspect-ratio: calc(2384 / 3370);
+
+    /* --height: 100vh; */
+    --height: 150vh;
+    --width: calc(var(--height) * var(--aspect-ratio));
+
+    /* A0 in inches */
+    --height: 46.8in;
+    --width: 33.1in;
+
+    /* A0 in pixels at high resolution 300 PPI */
+    /* --height: 14043px;
+    --width: 9933px; */
+
+    /* A4 in inches (uncomment to display in A0) */
+    /* --height: 11.7in;
+    --width: 8.3in; */
+
+
+    /* *** Fonts ***
+     *
+     * This sets the base font from which all other font sizes are calculated.
+     * You might need a different base to adapt to another document size.
+     * Always prefer changing it globally here rather than in individual texts.
+     */
+
+    --font-size: calc(0.01 * var(--height));  /* Recommended*/
+    /* --font-size: calc(0.00756 * var(--height));  /* Slightly smaller */
+
+
+    /* *** Boxes ***
+     *
+     * Content is distributed in individual boxes that can be hidden or
+     * displayed individually.
+     */
+
+    --box-margin: calc(0.0174 * var(--height));
+    --box-padding: calc(0.009 * var(--height));
+    --box-border: calc(.002 * var(--height));
+
+    /* Boxes are displayed in a two-column grid */
+    --content-grid-column: calc(50% - 0.5 * var(--box-margin));
+
+
+    /* *** Tables *** */
+    --table-padding-v: calc(0.0028 * var(--height));
+    --table-padding-h: calc(2 * var(--table-padding-v));
+    --table-border: calc(0.001 * var(--height));
+
+
+    /*
+     * *** Colours ***
+     *
+     * These colours have been chosen to contrast harmonically.
+     * You should not change the main colours (red, orange) to respect
+     * the recommended visual style of the Avignon University brand.
+     */
+
+    --colour-black: #333333;
+    --colour-gray: #ECECEC;
+
+    /* Avignon University brand */
+    --colour-au-red: #E7534D;
+    --colour-au-red-light: #FFE8E7;
+    --colour-au-orange: #F6A432;
+    --colour-au-orange-light: #FBDAAC;
+
+    /* LIA brand */
+    --colour-lia-blue: #115C96;
+}
+
+
+
+
+/* ********************************************************* *
+ *                       GLOBAL STYLES
+/* ********************************************************* */
+
+html {
+    font-size: var(--font-size);
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0 calc(.003 * var(--height));
+}
+
+ul ul, ol ol {
+    padding: 0 1rem;
+}
+
+ul.tags {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: calc(0.5 * var(--box-padding));
+}
+
+ul.tags li {
+    display: inline-block;
+    padding: calc(0.3 * var(--box-padding)) calc(0.5 * var(--box-padding));
+    font-size: .8rem;
+    background: var(--colour-gray);
+}
+
+sub {
+    color: var(--colour-au-red);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Code block */
+.code {
+    font-size: 0.8rem;
+    white-space: break-spaces;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* To highlight a piece of code, like a class name, in a code block */
+.field {
+    color: var(--colour-lia-blue);
+}
+
+/* Main div that wraps all the content */
+.main {
+    width: var(--width);
+    height: var(--height);
+    margin: 0 auto;
+    padding: calc(0.025 * var(--height));
+    box-sizing: border-box;
+    border: 1px solid var(--colour-black);
+    box-shadow: 0 0 5px var(--colour-black);
+}
+/*
+ * The main div has a border and shadow to see where the poster
+ * ends on the screen. It should be removed before printing.
+ */
+@media print {
+    div.main {
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* To easily hide things */
+.hidden {
+    display: none !important;
+}
+
+
+
+
+/* ********************************************************* *
+ *                          HEADER
+/* ********************************************************* */
+
+.header {
+    display: flex;
+}
+
+.logos {
+    flex-shrink: 0;
+    display: grid;
+    grid-gap: calc(0.002 * var(--height));
+    align-items: center;
+    justify-items: center;
+}
+
+.logos img {
+    width: calc(var(--height) * 0.045);
+}
+
+.logos.with-2 {
+    grid-template-columns: auto;
+}
+
+.logos.with-4 {
+    grid-template-columns: auto auto;
+}
+
+.title {
+    margin-left: calc(.015 * var(--height));
+    font-size: calc(0.01055 * var(--height));
+    text-align: right;
+}
+
+h1 {
+    margin: 0;
+    font-size: calc(0.0239 * var(--height));
+    font-weight: 800;
+    border-bottom: calc(0.002 * var(--height)) solid black;
+    padding-bottom: calc(0.01 * var(--height));
+}
+
+.title .email {
+    font-size: calc(0.0093 * var(--height));
+}
+
+
+
+
+/* ********************************************************* *
+ *                          CONTENT
+ * ********************************************************* */
+
+.content {
+    display: grid;
+    grid-template:
+      "top top"
+      "left right";
+    grid-template-columns: var(--content-grid-column) var(--content-grid-column);
+    grid-gap: var(--box-margin);
+    margin-top: var(--box-margin);
+}
+
+.span-2 {
+    grid-column: 1/3;
+}
+
+.highlight {
+    font-weight: 500;
+    color: var(--colour-au-red);
+}
+
+
+
+/* *** TABLES ********************************************** */
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1rem;
+    border: var(--table-border) solid var(--colour-black);
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: var(--table-padding-v) var(--table-padding-h);
+  text-align: center;
+    border-width: var(--table-border);
+    border-color: var(--colour-black);
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+thead th {
+    border-bottom-style: solid;
+}
+
+table tbody tr.highlight {
+    color: inherit;  /* Do not use the red from highlighted text */
+    background: var(--colour-gray);
+}
+
+
+
+/* *** BOXES *********************************************** */
+
+.box {
+    margin-top: var(--box-margin);
+    padding: 0 var(--box-padding);
+    outline-offset: calc(-1 * var(--box-border));
+}
+
+.box:first-child {
+    margin-top: 0;
+}
+
+.box.with-border,
+.box.with-bg {
+    padding: var(--box-padding) var(--box-padding);
+}
+
+.box.with-border {
+    outline: var(--box-border) solid var(--colour-black);
+}
+
+.box-title {
+    margin: calc(-1 * var(--box-padding));
+    margin-bottom: var(--box-padding);
+    padding: calc(0.6 * var(--box-padding)) var(--box-padding);
+
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    background: var(--colour-black);
+}
+
+.box-title .highlight {
+    font-size: var(--font-size);
+    color: inherit;
+}
+
+.box > p:first-child {
+    margin-top: 0;
+}
+
+.box > p:last-child {
+    margin-bottom: 0;
+}
+
+/*
+ * Box with content in two columns.
+ */
+.box.columns-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: calc(.5 * var(--box-margin));
+}
+
+/* Span the box title over the two columns */
+.box.columns-2 .box-title {
+    grid-column: 1/3;
+}
+
+/* To align text and image in adjacent columns */
+.box.columns-2.with-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* *** Coloured boxes **************************************
+ *
+ * There are multiple types of boxes pre-defined with
+ * different borders and backgrounds.
+ */
+
+/* Simple, no border, no background */
+.box.simple .box-title {
+    padding: var(--box-padding);
+    padding-bottom: 0;
+    background: none;
+    color: var(--colour-black);
+}
+
+/* Gray box, with a gray background by default */
+.box.with-bg {
+    background: var(--colour-gray);
+}
+
+/*
+ * Red box
+ */
+
+/* Background in title by default */
+.box.red .box-title {
+    background: var(--colour-au-red);
+}
+
+/* Optional background in content */
+.box.red.with-bg {
+    background: var(--colour-au-red-light);
+}
+
+/* Optional border */
+.box.red.with-border {
+    outline-color: var(--colour-au-red);
+}
+
+/*
+ * Orange box
+ */
+
+/* Background in title by default */
+.box.orange .box-title {
+    background: var(--colour-au-orange);
+}
+
+/* Optional background in content */
+.box.orange.with-bg {
+    background: var(--colour-au-orange-light);
+}
+
+/* Optional border */
+.box.orange.with-border {
+    outline-color: var(--colour-au-orange);
+}
+
+
+/* *** Individual boxes ************************************
+ *
+ * Some specific boxes have individual styles, like the
+ * abstract on top.
+ */
+
+/* A box that only contains an image */
+.box.image {
+    display: block;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+/* Abstract */
+.box.abstract {
+    grid-area: top;
+}
+
+/* Foot note */
+.box.note {
+    font-size: 0.8rem;
+    font-style: italic;
+    border-radius: calc(0.01 * var(--height));
+}
+
+/*
+ * Box with QR codes in a grid
+ *
+ * Used to display funding or author next to QR codes linking
+ * to code, dataset, or an online version of the paper.
+ */
+.box.with-qr {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.box.with-qr .qr {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 0;
+    padding-left: var(--box-margin);
+    text-align: center;
+    color: black;
+    background: white;
+}
+
+.box.with-qr .qr > img {
+    display: block;
+    width: calc(0.045 * var(--height));
+    margin-bottom: .5rem;
+}
+
+/* Funding, with QR codes to access dataset or code */
+.box.funding {
+    font-size: 0.8rem;
+}
+
+/* Author details */
+.box.author {
+    position: relative;
+    margin-top: calc(.015 * var(--height) + var(--box-margin));
+    margin-left: calc(.015 * var(--height));
+    padding-left: calc(.035 * var(--height) + 0.5 * var(--box-padding));
+    padding-bottom: calc(0.1 * var(--box-padding));
+    font-size: 0.8rem;
+    color: white;
+    background: var(--colour-black);
+}
+
+.box.author .box-title {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: right;
+    color: var(--colour-au-orange);
+    background: none;
+}
+
+.box.author img.avatar {
+    position: absolute;
+    top: calc(-.015 * var(--height));
+    left: calc(-.015 * var(--height));
+    width: calc(.05 * var(--height));
+    border: calc(.002 * var(--height)) solid var(--colour-au-orange);
+    border-radius: 50%;
+}
+
+/* Author details are displayed in a grid next to QR codes */
+.box.with-qr.author {
+    padding-bottom: 0;
+}
+.box.with-qr.author > :first-child {
+    padding-right: var(--box-padding);
+}

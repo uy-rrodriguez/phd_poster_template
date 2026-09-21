@@ -1,0 +1,59 @@
+/*
+ * Larger width for LIS logo
+ */
+.logos img.logo-lis {
+    width: calc(var(--height) / 18);
+}
+
+
+
+/* *** Specific tables *************************************
+ *
+ * These display different information from the paper.
+ */
+
+/* Dataset (hidden in final version) */
+table.dataset-details .if-dataset-nbr-choix {
+    display: none;
+}
+
+/* Dataset (hidden in final version) */
+table.tags-details {
+    display: none;
+}
+
+table.tags-details thead tr:first-child th {
+    border-bottom: none;
+}
+
+/* table.tags-details thead tr:first-child th:not(:last-child), */
+table.tags-details tr td:nth-child(3),
+table.tags-details tr td:nth-child(5),
+table.tags-details tr td:nth-child(7),
+table.tags-details tr td:nth-child(10) {
+    border-right-style: solid;
+}
+
+/* Model results (visible in final version) */
+table.model-results tbody tr:nth-child(1) td {
+    border-bottom-style: solid;
+}
+
+table.model-results .pill {
+    height: .8rem;
+    transform: rotate(-10deg);
+}
+
+/*table.model-results tr:nth-child(5) td {
+    border-bottom-style: solid;
+}*/
+
+table.llm-vs-humans tbody tr:nth-child(3) td {
+    border-bottom-style: solid;
+}
+
+/* Results of comparison with human scores (visible in final version) */
+table.llm-vs-humans th:nth-child(7),
+table.llm-vs-humans td:nth-child(7) {
+    display: none;
+}

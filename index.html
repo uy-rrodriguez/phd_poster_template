@@ -1,0 +1,393 @@
+<html>
+<head>
+
+  <!-- Import font Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+
+  <!-- Generic styles for the template -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Custom styles for a specific poster -->
+  <link rel="stylesheet" href="css/custom.css">
+
+</head>
+<body>
+
+<div class="main portrait">
+
+
+  <!-- Header with logos and title -->
+  <div class="header">
+
+    <!-- Option with 2 logos -->
+    <div class="logos with-2">
+      <img src="img/logo_au.png" />
+      <img src="img/logo_lia.png" />
+    </div>
+
+
+    <!-- Option with 4 logos (remove class "hidden" to show) -->
+    <div class="logos with-4 hidden">
+      <img src="img/logo_au.png" />
+      <img src="img/logo_hal.png" />
+      <img src="img/logo_lia.png" />
+      <img src="img/logo_lis.png" />
+    </div>
+
+
+    <!-- Title and authors -->
+    <div class="title">
+      <h1>
+        A very large and informative long paper title, that is very long but
+        still readable
+      </h1>
+
+      <div>
+        <b>Main Author Name</b><sup>1</sup> &nbsp; &nbsp;
+        Another Author<sup>2</sup> &nbsp; &nbsp;
+        Second Author<sup>1</sup>
+      </div>
+      <div>
+        <sup>1</sup> LIA, Avignon University &nbsp; &nbsp;
+        <sup>2</sup> Another membership
+      </div>
+      <div class="email">author.name@univ-avignon.fr</div>
+    </div>
+
+  </div>
+
+
+  <!-- Main content div, a wrapper for all the boxes -->
+  <div class="content">
+
+    <!-- Abstract, appearing on top and spreading over two columns -->
+    <div class="box with-bg red span-2 abstract">
+      <div class="box-title">
+        Summary
+        <span class="highlight">(always on top and spreading over two columns)</span>
+      </div>
+      <ol>
+        <li>
+          Highlight your abstract or the key points at the very top.
+          Make it concise and informative to your viewers, <span class="highlight">and attractive!</span>
+        </li>
+        <li>
+          This template contains elements hidden from view to save space.
+          For e.g.: A header with four logos, and different options for the
+          information at the bottom for funding or author.
+          Remove the <span class="field">"hidden"</span> class to see them.</li>
+      </ol>
+    </div>
+
+
+    <!-- Beginning of the left column, wrapper for contents on the left -->
+    <div class="left-column">
+
+
+      <!-- Default box, with black background in the title -->
+      <div class="box">
+          <div class="box-title">Default box, with black background in the title</div>
+          <p>
+            This is a
+            <span class="code">div</span>
+            with class
+            <span class="code field">"box"</span>
+            and a child with class
+            <span class="code field">"box-title"</span>.
+          </p>
+          <p>
+            Define inline code with a <span class="code">span</span>
+            and the class <span class="code field">"code"</span>.
+          </p>
+          <div class="code">{
+  <span class="field">"tip1"</span>: "Or use a 'div' instead to define a code block over
+           multiple lines    that    respect    the spacing",
+  <span class="field">"tip2"</span>: "You can highlight keywords in a span like <span class="field">this</span>"
+}</div>
+      </div>
+
+
+      <!-- Box with two-column layout -->
+      <div class="box dataset columns-2">
+        <div class="box-title">Columns layout and sample item list</div>
+        <div>(left) This text appears over</div>
+        <div>(right) two columns</div>
+      </div>
+
+
+      <!-- Box with two-column to display an image on the side:
+            - layout centered vertically
+            - space in-between
+            - columns of unequal size
+        -->
+      <div class="box columns-2 with-image">
+        <div>
+          These columns are centered vertically and have different widths,
+          adapting to the zise of the image.
+        </div>
+        <img src="img/sample_column_img.png" style="max-width: 25%;">
+      </div>
+
+
+      <!-- Box showcasing a list of simple items/tags -->
+      <div class="box">
+        <p>Example of a list of tags or simple items</p>
+        <ul class="tags">
+          <li>
+            <span class="highlight">Item 1</span>
+          </li>
+          <li>
+            <span class="highlight">Item 2</span>
+          </li>
+          <li>
+            <span class="highlight">Item with sublist</span>
+            : <i>Question, Instruction, Affirmation</i>
+          </li>
+          <li>
+            <span class="highlight">Another item</span>
+            : <i>Single, Multiple, Undefined</i>
+          </li>
+        </ul>
+      </div>
+
+
+      <!-- Box with default border -->
+      <div class="box with-border">
+        <div class="box-title">Box with default border</div>
+        <p>
+          The class <span class="code field">"with-border"</span> adds a black border and padding.
+          <br>
+          The classes <span class="code field">"red"</span> and <span class="code field">"orange"</span> change the default colour.
+        </p>
+      </div>
+
+
+      <!-- Simple box, without background on the title and default gray background -->
+      <div class="box simple with-bg">
+        <div class="box-title">Simple box, with default gray background</div>
+        <p>The class <span class="code field">"with-bg"</span> adds a gray background and padding.</p>
+        <p>The class <span class="code field">"simple"</span> removes the background on the title.</p>
+      </div>
+
+
+      <!-- Orange box with border -->
+      <div class="box with-border orange">
+        <div class="box-title">
+          Orange box with border
+          <span class="highlight">(and small clarification)</span>
+        </div>
+        <p>Example of math equation, processed with <span class="code field">"mathjax"</span>:</p>
+        <p>$$H(P) = \frac{- \sum_{i=1}^{n} p_i log(p_i)}{log(n)}$$</p>
+        <p>
+          $n =$ number of all items<br>
+        </p>
+      </div>
+
+
+      <!-- Orange box with background -->
+      <div class="box orange with-bg">
+        <div class="box-title">Orange box, with background</div>
+        <ul>
+          <li>
+            <b>BLEU</b>: Metric for evaluating the quality of machine-translated
+            text.
+          </li>
+          <!-- <li>
+            <b>ROUGE</b>: Recall-Oriented Understudy for Gisting Evaluation, a
+            set of metrics for evaluating automatic summarisation and machine
+            translation.
+          </li> -->
+        </ul>
+      </div>
+
+    </div>
+
+
+    <!-- Beginning of the right column, wrapper for contents on the right -->
+    <div class="right-column">
+
+
+      <!-- Red box with title over red background -->
+      <div class="box red">
+        <div class="box-title">Red box, default with coloured title</div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna.
+      </div>
+
+
+      <!-- Red box with border -->
+      <div class="box red with-border">
+        <div class="box-title">Red box, with border</div>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat.
+      </div>
+
+
+      <!-- Table as a box element -->
+      <table class="box model-results">
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Specialised</th>
+            <th>WER</th>
+            <th>BLEU</th>
+            <th>ROUGE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Baseline</td>
+            <td>-</td>
+            <td>0,594</td>
+            <td>0,517</td>
+            <td>0,677</td>
+          </tr>
+          <tr>
+            <td>Llama-3-8B</td>
+            <td>-</td>
+            <td>0,453</td>
+            <td>0,373</td>
+            <td>0,575</td>
+          </tr>
+          <tr class="highlight">
+            <td>Mistral-7B-v0.3</td>
+            <td>-</td>
+            <td><b>0,491</b></td>
+            <td><b>0,418</b></td>
+            <td><b>0,626</b></td>
+          </tr>
+          <tr>
+            <td>BioMistral-7B</td>
+            <td>
+               <img class="pill" src="img/pill.png">
+            </td>
+            <td>0,404</td>
+            <td>0,326</td>
+            <td>0,551</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <!-- Very simple box, without highlight colour or background -->
+      <div class="box simple feat-analysis">
+        <div class="box-title">Very simple box, without highlight colour</div>
+        <ul>
+          <li>Linear regression with five-fold cross-validation</li>
+          <li>Observation 1: Humans are better than LLMs (luckily)</li>
+          <li>Observation 2: Some topics are extremely difficult</li>
+        </ul>
+      </div>
+
+
+      <!-- Box styled as a citation or a note -->
+      <div class="box with-bg note">
+        <p>"This is a box styled as a citation or a note."</p>
+        <p>And below there is an example of a box containing only an image:</p>
+      </div>
+
+
+      <!-- Image defined as a box -->
+      <img class="box image" src="img/sample_graph.png">
+
+
+      <!-- Red box with background -->
+      <div class="box with-bg red">
+        <div class="box-title">Red box, with background</div>
+        <ul>
+          <li>
+            New dataset <span class="highlight">CoolDatasetName</span>
+            published for free access and with an open license on HuggingFace.<br>
+          </li>
+          <li>
+            Another super revolutionary contribution to the scientific community.
+          </li>
+        </ul>
+      </div>
+
+
+      <!-- Funding information with two QR codes -->
+      <div class="box with-qr funding">
+        <p>
+          Funding notice: This work benefitted from access to the super-computers provided by
+          the CNRS IDRIS and of financial support from the project ANR XYZ.
+          <span class="highlight">https://anr-xyz.github.io/</span>
+          <br><br>
+          QR codes: <span class="highlight">https://broulo-qr-code.vercel.app</span>
+        </p>
+
+        <div class="qr">
+          <img src="img/qr_hal.png">
+          <b>Article</b>
+        </div>
+        <div class="qr">
+          <img src="img/qr_hf.png">
+          <b>Dataset</b>
+        </div>
+      </div>
+
+
+      <!-- Funding information with placeholder for a QR code (remove class "hidden" to show) -->
+      <div class="box with-qr funding hidden">
+        <p>
+          Funding notice: This work benefitted from access to the super-computers provided by
+          the CNRS IDRIS and of financial support from the project ANR XYZ.
+          <span class="highlight">https://anr-xyz.github.io/</span>
+        </p>
+
+        <div class="qr">
+          <img src="img/blank.png">
+          <b></b>
+        </div>
+      </div>
+
+
+      <!-- Author information (remove class "hidden" to show) -->
+      <div class="box author hidden">
+        <div class="bio">
+          <div class="box-title">Author Name</div>
+          <img class="avatar" src="img/author.png">
+
+          <p>1st year PhD student, studying Multimodal LLMs</p>
+
+          <p>author.name@univ-avignon.fr</p>
+        </div>
+      </div>
+
+
+      <!-- Author information and QR code (remove class "hidden" to show) -->
+      <div class="box with-qr author hidden">
+        <div class="bio">
+          <div class="box-title">Author Name</div>
+          <img class="avatar" src="img/author.png">
+
+          <p>1st year PhD student, studying Multimodal LLMs</p>
+
+          <p>author.name@univ-avignon.fr</p>
+        </div>
+        <div class="qr">
+          <img src="img/qr_hf.png">
+          <b>Dataset</b>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- This defines a JavaScript element that processes equations in the text -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</body>
+</html>
