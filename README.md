@@ -2,7 +2,7 @@
 HTML template for a scientific poster based on Avignon University's LIA
 (Laboratoire Informatique d'Avignon).
 
-Based on the LaTeX template created by Vincent Labatut.
+Based on the LaTeX template created by Teva Merlin.
 
 ## Content
  - index.html: Main file with the poster content.
